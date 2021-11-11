@@ -1,0 +1,30 @@
+start = 'Car started...Ready to go!'
+stop = 'Car stopped.'
+help = '''start - to start the car
+stop - to stop the car
+quit - to exit'''
+other = "I don't understan that"
+initial_question = 0
+has_started = True #if has_started = false ==stopped
+
+while initial_question >= 0:
+    user_question = input('>').lower()
+    if user_question == 'help':
+        print(help)
+    elif user_question == 'stop':
+        if has_started:                     #正在开车希望stop
+            print(stop)
+            has_started = False             #把状态改为 not started
+        elif not has_started:
+            print("Already stopped")
+    elif user_question == 'start':
+        if not has_started:                 #希望start且现在是 stop状态
+            print(start)
+            has_started = True
+        elif has_started:
+            print('Already start')
+    elif user_question == 'quit':
+        break
+    else:print(f'{other} {user_question}')
+
+    initial_question += 1
