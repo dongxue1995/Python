@@ -1,0 +1,19 @@
+class Person:                                             #定义总的大类
+    def __init__(self,name):                               #Constructors--自定义属性
+        self.name = name
+
+    def talk(self):                                        #自定义技能
+        print(f'Hi, I am {self.name}')
+
+class Person01 (Person):                                   #引用大类中的已定义的功能
+    pass
+
+
+class Person02 (Person):
+    pass
+
+
+person01attribute = Person01('Zhangshan')                  #给变量赋值
+person02attribute = Person02('Lisi')
+
+person01attribute.talk()                                   #执行变量
